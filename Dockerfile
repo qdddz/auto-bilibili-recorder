@@ -6,7 +6,7 @@ COPY requirements.txt .
 COPY *.py ./
 
 RUN apk update && \
- apk add font-noto-emoji font-noto-cjk-extra python3 python3-dev py3-numpy py3-matplotlib py3-scipy py3-requests ffmpeg && \
+ apk add font-noto-emoji font-noto-cjk-extra python3 python3-dev py3-numpy py3-matplotlib py3-scipy py3-requests ffmpeg gcompat && \
  apk add --no-cache --virtual .build-deps git make gcc g++ wget unzip && \
  wget https://bootstrap.pypa.io/get-pip.py && \
  python3 ./get-pip.py && \
@@ -23,7 +23,8 @@ RUN apk update && \
  cd /BililiveRecorder && \
  wget https://github.com/BililiveRecorder/BililiveRecorder/releases/latest/download/BililiveRecorder-CLI-linux-x64.zip && \
  unzip BililiveRecorder-CLI-linux-x64.zip && \
- rm -f BililiveRecorder-CLI-linux-x64.zip
+ chmod a+x ./BililiveRecorder.Cli && \
+ rm -f ./BililiveRecorder-CLI-linux-x64.zip
 
 WORKDIR "/storage"
 ENV PYTHONUNBUFFERED=1
