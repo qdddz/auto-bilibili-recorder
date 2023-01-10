@@ -11,3 +11,5 @@ rsa==4.9
 toml~=0.10.2
 urllib3==1.26.13
 pillow==9.3.0
+tqdm~=4.53.0
+textrank4zh~=0.3
