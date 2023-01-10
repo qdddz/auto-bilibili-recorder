@@ -17,9 +17,10 @@ RUN cd / && git clone https://github.com/hihkm/DanmakuFactory.git && cd DanmakuF
 WORKDIR "/webhook"
 
 COPY requirements.txt .
-COPY *.py .
-RUN pip3 install --upgrade -r requirements.txt && pip3 install git+https://github.com/valkjsaaa/danmaku_tools.git@4853f226301f7f661bcdf6d2925148bc9ecdbffd && 
-RUN wget https://raw.githubusercontent.com/valkjsaaa/Bilibili-Toolkit/7b86a61214149cc3f790d02d5d06ecd7540b9bdb/bilibili.py
+COPY *.py ./
+RUN pip3 install --upgrade -r requirements.txt && pip3 install git+https://github.com/valkjsaaa/danmaku_tools.git@4853f226301f7f661bcdf6d2925148bc9ecdbffd && wget https://raw.githubusercontent.com/valkjsaaa/Bilibili-Toolkit/7b86a61214149cc3f790d02d5d06ecd7540b9bdb/bilibili.py
+
+RUN apt purge -y wget git apt-transport-httpsmake gcc && rm -rf /tmp
 
 WORKDIR "/storage"
 ENV PYTHONUNBUFFERED=1
