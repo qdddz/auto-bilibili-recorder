@@ -179,6 +179,9 @@ class RecordUploadManager:
             "yy": f"{session.start_time.year:04d}",
             "mm": f"{session.start_time.month:02d}",
             "dd": f"{session.start_time.day:02d}",
+            "HH": f"{session.start_time.hour:02d}",
+            "MM": f"{session.start_time.minute:02d}",
+            "SS": f"{session.start_time.second:02d}",
             "flv_path": session.videos[0].flv_file_path()
         }
         title = Template(room_config.title).substitute(substitute_dict)
