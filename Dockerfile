@@ -29,9 +29,9 @@ RUN apk update && \
     *) ;; \
     esac && \
     wget https://github.com/BililiveRecorder/BililiveRecorder/releases/latest/download/BililiveRecorder-CLI-linux-$ARCH.zip && \
-    unzip BililiveRecorder-CLI-linux-x64.zip && \
+    unzip BililiveRecorder-CLI-linux-$ARCH.zip && \
     chmod a+x ./BililiveRecorder.Cli && \
-    rm -f ./BililiveRecorder-CLI-linux-x64.zip
+    rm -f ./BililiveRecorder-CLI-linux-$ARCH.zip
 
 WORKDIR "/storage"
 ENV PYTHONUNBUFFERED=1
