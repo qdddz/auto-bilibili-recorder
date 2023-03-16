@@ -3,7 +3,7 @@ PyYAML==6.0
 python-dateutil~=2.8.1
 gpuinfo~=1.0.0a7
 git+https://github.com/valkjsaaa/bilibili_api.git@a0ed796b1aacca306be5736920c298f4986b1aaa
-git+https://github.com/valkjsaaa/danmaku_tools.git@c7d86d10f157066ca24196b4222d9ef291e8e78e
+git+https://github.com/qdddz/danmaku_tools.git
 Quart==0.18.3
 srt==3.5.2
 chardet==5.1.0
