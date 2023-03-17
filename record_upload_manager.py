@@ -164,6 +164,7 @@ class RecordUploadManager:
         room_config = session.room_config
         if room_config.uploader is None:
             print(f"No need to upload for {room_config.id}")
+            await session.gen_early_video()
             await asyncio.sleep(WAIT_SESSION_MINUTES * 60)
             await session.gen_danmaku_video()
             return
@@ -197,6 +198,7 @@ class RecordUploadManager:
         with self.save_lock:
             self.save.video_name_history[session.session_id] = title
         description = Template(room_config.description).substitute(substitute_dict)
+        await session.gen_early_video()
         early_upload_task = None
         if session.early_video_path is not None:
             early_upload_task = UploadTask(

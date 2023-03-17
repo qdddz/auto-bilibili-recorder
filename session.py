@@ -303,7 +303,7 @@ class Session:
         await self.process_danmaku()
         await self.process_thumbnail()
         self.generate_concat()
-        await self.process_early_video()
+        # await self.process_early_video()
 
     async def gen_danmaku_video(self):
         if len(self.videos) == 0:
